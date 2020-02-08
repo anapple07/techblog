@@ -25,8 +25,8 @@
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@https://twitter.com/anapple07_jp">
-  <meta name="twitter:creator" content="@https://twitter.com/anapple07_jp">
+  <meta name="twitter:site" content="@anapple07_jp">
+  <meta name="twitter:creator" content="@anapple07_jp">
 
 
 <meta property="og:title" content="tech.anapple07">
@@ -60,6 +60,127 @@
         <main>
             
 	
+<article class="list">
+  <a href='http://example.org/post/2020/01/11/'><h2 class="title">Mapっぽいなにか</h2></a>
+  <span class="tags">
+  January 11, 2020 
+  
+     , tags
+     
+        <a href="http://example.org/tags/perl">Perl</a>
+     
+  
+  </span>
+  
+  <span class="intro"></span>
+    <p>先日気になったのでどうなのかなーって思って調べた話。(for Perl)</p>
+<p><code>my @array = ( 1..1_000 );</code></p>
+<p>この配列の値をハッシュのkeyにして扱いやすくしてあれこれしていく、っていうを割とやるのですが、
+だいたい</p>
+<pre><code>my %map = map { $_ =&gt; 1 } @array;
+</code></pre><p>とか</p>
+<pre><code>my %map;
+foreach my $id ( @array ) {
+    $map{$id} = 1;
+}
+</code></pre><p>とかってやってたのですが先日</p>
+<pre><code>my %map;
+@map{@array} = ();
+</code></pre><p>outout が 
+%map = {
+1 =&gt; undef,
+2 =&gt; undef,
+&hellip;.
+}
+こう書いた方が速いです、というコメントを見て、こんな書き方できるのかーって思ったのと
+本当に速いんですか？って思ったので調べた。</p>
+<pre><code>#!/usr/bin/env perl
+use strict;
+use warnings;
+use Time::HiRes qw(gettimeofday tv_interval);
+my @array = ( 1..1_000 );
+{
+    my $t0 = [gettimeofday];
+    my %map;
+    @map{@array} = ();
+    my $elapsed = tv_interval($t0);
+    print '--@map{@array}--' . &quot;\n&quot;;
+    print $elapsed * 1000 . &quot;\n&quot;;
+}
+{
+    my $t0 = [gettimeofday];
+    my %map = map { $_ =&gt; 1 } @array;
+    my $elapsed = tv_interval($t0);
+    print '--map--' . &quot;\n&quot;;
+    print $elapsed * 1000 . &quot;\n&quot;;
+}
+{
+    my $t0 = [gettimeofday];
+    my %map;
+    foreach my $id ( @array ) {
+        $map{$id} = 1;
+    }
+    my $elapsed = tv_interval($t0);
+    print '--foreach--' . &quot;\n&quot;;
+    print $elapsed * 1000 . &quot;\n&quot;;
+}
+{
+    my $t0 = [gettimeofday];
+    my %map;
+    for my $id ( @array ) {
+        $map{$id} = 1;
+    }
+    my $elapsed = tv_interval($t0);
+    print '--for--' . &quot;\n&quot;;
+    print $elapsed * 1000 . &quot;\n&quot;;
+}
+
+1;
+</code></pre><p>実行結果</p>
+<h3 id="1_000_000で実行">1_000_000で実行</h3>
+<pre><code>$perl sample.pl
+--@map{@array}--
+740.508
+--map--
+1199.097
+--foreach--
+639.542
+--for--
+650.275
+</code></pre><h3 id="10_000_000-で実行">10_000_000 で実行</h3>
+<pre><code>$perl sample.pl 10_000_000
+--@map{@array}--
+11308.191
+--map--
+16796.802
+--foreach--
+9985.983
+--for--
+10101.491
+</code></pre><p>※ foreachとforが定期的にどっちが速いのかわからなくなるのでまた調べた。
+一応
+<a href="https://perldoc.perl.org/perlsyn.html">https://perldoc.perl.org/perlsyn.html</a></p>
+<blockquote>
+<p>The foreach keyword is actually a synonym for the for keyword, so you can use either</p>
+</blockquote>
+<p>for と foreachはperldocで同義ですよって言われている。
+foreachが速いって思ってたんだけどPHPとごっちゃになってるのかな。</p>
+<p><a href="https://qiita.com/h13/items/a75fba76f435212a2eb3">https://qiita.com/h13/items/a75fba76f435212a2eb3</a></p>
+<p>とにかく</p>
+<p><!-- raw HTML omitted -->foreach = for &gt; @map{@array} &gt; map<!-- raw HTML omitted --></p>
+<p>の順で速かったので mapより @map{@array}  にしたほうが速かった。</p>
+<p>ちなみに
+valueがundefになって速いなら</p>
+<pre><code>my %map;
+foreach my $id ( @array ) {
+    $map{$id} = undef;
+}
+</code></pre><p>にしたら速くなるのでは？と思ったけどそんなことはなかった。</p>
+<p>まあけど、可読性がよくなるという理由以外にmap使わないようにしましょうって話ですね。</p>
+<p>ワンライナーかっこいいという理由でmap使いがちでした/(^o^)\おわた</p>
+
+</article>
+
 
 	<nav id="post-nav">
     

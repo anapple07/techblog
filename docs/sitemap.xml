@@ -3,11 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://example.org/post/2020/01/11/</loc>
+    <lastmod>2020-01-11T11:25:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/perl/</loc>
+    <lastmod>2020-01-11T11:25:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/</loc>
+    <lastmod>2020-01-11T11:25:32+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/tags/</loc>
+    <lastmod>2020-01-11T11:25:32+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/</loc>
+    <lastmod>2020-01-11T11:25:32+09:00</lastmod>
   </url>
   
 </urlset>

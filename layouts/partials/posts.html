@@ -1,6 +1,6 @@
 {{ range where .Paginator.Pages "Section" "ne" "" }}
 <article class="list">
-  <h2 class="title">{{ .LinkTitle }}</h2>
+  <a href='{{ .Permalink }}'><h2 class="title">{{ .LinkTitle }}</h2></a>
   <span class="tags">
   {{ .Date.Format "January 2, 2006" }} 
   {{ if .Params.tags }}

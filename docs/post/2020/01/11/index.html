@@ -25,8 +25,8 @@
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@https://twitter.com/anapple07_jp">
-  <meta name="twitter:creator" content="@https://twitter.com/anapple07_jp">
+  <meta name="twitter:site" content="@anapple07_jp">
+  <meta name="twitter:creator" content="@anapple07_jp">
 
 
 <meta property="og:title" content="Mapっぽいなにか">
@@ -163,13 +163,13 @@ my @array = ( 1..1_000 );
 10101.491
 </code></pre><p>※ foreachとforが定期的にどっちが速いのかわからなくなるのでまた調べた。
 一応
-[https://perldoc.perl.org/perlsyn.html:title]</p>
+<a href="https://perldoc.perl.org/perlsyn.html">https://perldoc.perl.org/perlsyn.html</a></p>
 <blockquote>
 <p>The foreach keyword is actually a synonym for the for keyword, so you can use either</p>
 </blockquote>
 <p>for と foreachはperldocで同義ですよって言われている。
 foreachが速いって思ってたんだけどPHPとごっちゃになってるのかな。</p>
-<p>[https://qiita.com/h13/items/a75fba76f435212a2eb3:title]</p>
+<p><a href="https://qiita.com/h13/items/a75fba76f435212a2eb3">https://qiita.com/h13/items/a75fba76f435212a2eb3</a></p>
 <p>とにかく</p>
 <p><!-- raw HTML omitted -->foreach = for &gt; @map{@array} &gt; map<!-- raw HTML omitted --></p>
 <p>の順で速かったので mapより @map{@array}  にしたほうが速かった。</p>
@@ -190,7 +190,7 @@ foreach my $id ( @array ) {
   </article>
   
 <div class="share-card">
-    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fexample.org%2fpost%2f2020%2f01%2f11%2f - Map%e3%81%a3%e3%81%bd%e3%81%84%e3%81%aa%e3%81%ab%e3%81%8b by @https%3a%2f%2ftwitter.com%2fanapple07_jp"><i class="fa fa-twitter"></i> Tweet</a>
+    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fexample.org%2fpost%2f2020%2f01%2f11%2f - Map%e3%81%a3%e3%81%bd%e3%81%84%e3%81%aa%e3%81%ab%e3%81%8b by @anapple07_jp"><i class="fa fa-twitter"></i> Tweet</a>
 
     <a class="facebook" href="#" onclick="
         window.open(
@@ -204,24 +204,6 @@ foreach my $id ( @array ) {
 
  
   
-  
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'Anna';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
         </main>
         
