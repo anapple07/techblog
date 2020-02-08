@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tech.anapple07</title>
-    <link>http://example.org/</link>
+    <link>https://anapple07.github.io/techblog/</link>
     <description>Recent content on tech.anapple07</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, all rights reserved.</copyright>
     <lastBuildDate>Sat, 11 Jan 2020 11:25:32 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://anapple07.github.io/techblog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mapっぽいなにか</title>
-      <link>http://example.org/post/2020/01/11/</link>
+      <link>https://anapple07.github.io/techblog/post/2020/01/11/</link>
       <pubDate>Sat, 11 Jan 2020 11:25:32 +0900</pubDate>
       
-      <guid>http://example.org/post/2020/01/11/</guid>
+      <guid>https://anapple07.github.io/techblog/post/2020/01/11/</guid>
       <description>先日気になったのでどうなのかなーって思って調べた話。(for Perl)
 my @array = ( 1..1_000 );
 この配列の値をハッシュのkeyにして扱いやすくしてあれこれしていく、っていうを割とやるのですが、 だいたい

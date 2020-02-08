@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on tech.anapple07</title>
-    <link>http://example.org/tags/</link>
+    <link>https://anapple07.github.io/techblog/tags/</link>
     <description>Recent content in Tags on tech.anapple07</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2020, all rights reserved.</copyright>
     <lastBuildDate>Sat, 11 Jan 2020 11:25:32 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://anapple07.github.io/techblog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Perl</title>
-      <link>http://example.org/tags/perl/</link>
+      <link>https://anapple07.github.io/techblog/tags/perl/</link>
       <pubDate>Sat, 11 Jan 2020 11:25:32 +0900</pubDate>
       
-      <guid>http://example.org/tags/perl/</guid>
+      <guid>https://anapple07.github.io/techblog/tags/perl/</guid>
       <description></description>
     </item>
     
