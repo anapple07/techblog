@@ -26,7 +26,7 @@ paginate = 12
     readMore = "Read more"
 
     # Social
-	twitter  = "https://twitter.com/anapple07_jp"
+	twitter  = "anapple07_jp"
 	github   = "https://github.com/anapple07"
 	facebook  = ""
     linkedin  = ""
