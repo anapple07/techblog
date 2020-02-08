@@ -1,3 +1,46 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "tech.anapple07"
+description = "tech"
+config = "config.toml"
+tags = ["Unity", "Perl", "vim"]
+theme = "onepress"
+publishDir = "docs"
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+# Disable comments by leaving disqusShortname empty
+disqusShortname = "Anna"
+copyright = "Copyright © 2020, all rights reserved."
+canonifyURLS = true
+paginate = 12
+
+[params]
+	author = "Anna"
+    bio = "web developer"
+	#logo = "/images/onepress-logo.jpg"
+	#avatar = "/images/onepress-author.png"
+	#opengraphImage = "/images/onepress-logo.jpg"
+	enableRSS = true
+
+	customCSS = true
+    readMore = "Read more"
+
+    # Social
+	twitter  = "https://twitter.com/anapple07_jp"
+	github   = "https://github.com/anapple07"
+	facebook  = ""
+    linkedin  = ""
+
+    # Widget
+    widgets = true
+
+    # Author box and Share button
+    authorCard  = true
+    shareButton = true
+
+    # Code highlighting with highlight.js
+    highlightJS = true
+
+# Taxonomies
+[taxonomies]
+    tag = "tags"
