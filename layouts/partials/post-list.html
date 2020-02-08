@@ -4,7 +4,7 @@
   <span class="tags">
   {{ .Date.Format "January 2, 2006" }} 
   {{ if .Params.tags }}
-     , posted under
+     , tags
      {{range .Params.tags}}
         <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
      {{end}}
