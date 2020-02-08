@@ -1,0 +1,19 @@
+{{ range where .Paginator.Pages "Section" "ne" "" }}
+<article class="list">
+  <h2 class="title">{{ .LinkTitle }}</h2>
+  <span class="tags">
+  {{ .Date.Format "January 2, 2006" }} 
+  {{ if .Params.tags }}
+     , tags
+     {{range .Params.tags}}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+     {{end}}
+  {{end}}
+  </span>
+  {{ if .Params.featuredImage  }}
+  <a href='{{ .Permalink }}'><span class="image" style="background-image: url({{.Params.featuredimage }})"></span></a>
+  {{ end }}
+  <span class="intro">{{ .Description | markdownify }}</span>
+    {{ .Content }}
+</article>
+{{ end }}
